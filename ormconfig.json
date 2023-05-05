@@ -4,5 +4,12 @@
     "port": 5432,
     "username": "docker",
     "password": "docker",
-    "database": "rentx"
+    "database": "rentx",
+    "cli": {
+        "migrationsDir": "./src/database/migrations",
+        "entitiesDir": ".src/modules/cars/entities"
+    },
+    "entities": [
+        "./src/modules/cars/entities/**/*{.ts,.js}"
+    ]
 }
