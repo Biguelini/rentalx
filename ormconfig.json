@@ -6,10 +6,13 @@
     "password": "docker",
     "database": "rentx",
     "cli": {
-        "migrationsDir": "./src/database/migrations",
+        "migrationsDir": "./src/database/migrations/**/*{.ts,.js}",
         "entitiesDir": ".src/modules/cars/entities"
     },
     "entities": [
         "./src/modules/cars/entities/**/*{.ts,.js}"
+    ],
+    "migrations": [
+        "./src/database/migrations/*.ts"
     ]
 }
