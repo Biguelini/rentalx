@@ -24,7 +24,7 @@ class Car {
     joinColumns: [{ name: "car_id" }],
     inverseJoinColumns: [{ name: "specification_id" }]
   })
-  speficicatons: Specification[]
+  specifications: Specification[]
 
 
 
