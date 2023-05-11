@@ -15,7 +15,7 @@ import "@shared/container"
 createConnection()
 
 const app = express()
-const port = 3333;
+const port = 3333
 
 app.use(express.json())
 

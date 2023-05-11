@@ -1,4 +1,4 @@
-import { MigrationInterface, QueryRunner, Table, TableForeignKey } from "typeorm";
+import { MigrationInterface, QueryRunner, Table, TableForeignKey } from "typeorm"
 
 export class CreateSpecificationCars1683727125312 implements MigrationInterface {
 
@@ -22,7 +22,7 @@ export class CreateSpecificationCars1683727125312 implements MigrationInterface 
           },
         ],
       })
-    );
+    )
 
     await queryRunner.createForeignKey(
       "specifications_cars",
@@ -34,7 +34,7 @@ export class CreateSpecificationCars1683727125312 implements MigrationInterface 
         onDelete: "SET NULL",
         onUpdate: "SET NULL",
       })
-    );
+    )
 
     await queryRunner.createForeignKey(
       "specifications_cars",
@@ -46,21 +46,21 @@ export class CreateSpecificationCars1683727125312 implements MigrationInterface 
         onDelete: "SET NULL",
         onUpdate: "SET NULL",
       })
-    );
+    )
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.dropForeignKey(
       "specifications_cars",
       "FKCarSpecification"
-    );
+    )
 
     await queryRunner.dropForeignKey(
       "specifications_cars",
       "FKSpecificationCar"
-    );
+    )
 
-    await queryRunner.dropTable("specifications_cars");
+    await queryRunner.dropTable("specifications_cars")
   }
 
 }

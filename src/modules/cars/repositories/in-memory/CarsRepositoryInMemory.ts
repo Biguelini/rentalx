@@ -1,6 +1,6 @@
-import { ICreateCarDTO } from "@modules/cars/dto/ICreateCarDTO";
-import { ICarsRepository } from "../ICarsRepository";
-import { Car } from "@modules/cars/infra/typeorm/entities/Car";
+import { ICreateCarDTO } from "@modules/cars/dto/ICreateCarDTO"
+import { ICarsRepository } from "../ICarsRepository"
+import { Car } from "@modules/cars/infra/typeorm/entities/Car"
 
 class CarsRepositoryInMemory implements ICarsRepository {
   async findById(id: string): Promise<Car> {
@@ -19,11 +19,11 @@ class CarsRepositoryInMemory implements ICarsRepository {
           (brand && car.brand == brand) ||
           (category_id && car.category_id === category_id) ||
           (name && car.name === name)) {
-          return car;
+          return car
         }
-        return null; 3
+        return null
       })
-    return all;
+    return all
   }
   async findByLicensePlate(license_plate: string): Promise<Car> {
     return this.cars.find(car => car.license_plate === license_plate)

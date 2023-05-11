@@ -1,7 +1,7 @@
-import { ICreateCarDTO } from "@modules/cars/dto/ICreateCarDTO";
-import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
-import { Car } from "../entities/Car";
-import { Repository, getRepository } from "typeorm";
+import { ICreateCarDTO } from "@modules/cars/dto/ICreateCarDTO"
+import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository"
+import { Car } from "../entities/Car"
+import { Repository, getRepository } from "typeorm"
 
 class CarsRepository implements ICarsRepository {
 
@@ -11,8 +11,8 @@ class CarsRepository implements ICarsRepository {
 
   constructor() { this.repository = getRepository(Car) }
   async findById(id: string): Promise<Car> {
-    const car = await this.repository.findOne(id);
-    return car;
+    const car = await this.repository.findOne(id)
+    return car
   }
   async findAvailable(
     brand?: string,

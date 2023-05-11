@@ -1,4 +1,4 @@
-import { MigrationInterface, QueryRunner, Table } from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from "typeorm"
 
 export class CreateCarImages1683809470831 implements MigrationInterface {
 
@@ -33,11 +33,11 @@ export class CreateCarImages1683809470831 implements MigrationInterface {
                     },
                 ],
             })
-        );
+        )
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("cars_image");
+        await queryRunner.dropTable("cars_image")
 
     }
 
