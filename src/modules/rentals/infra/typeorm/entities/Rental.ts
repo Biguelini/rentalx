@@ -6,49 +6,49 @@ import {
   ManyToOne,
   PrimaryColumn,
   UpdateDateColumn,
-} from "typeorm";
-import { v4 as uuidV4 } from "uuid";
+} from "typeorm"
+import { v4 as uuidV4 } from "uuid"
 
-import { Car } from "../../../../cars/infra/typeorm/entities/Car";
+import { Car } from "../../../../cars/infra/typeorm/entities/Car"
 
 @Entity("rentals")
 class Rental {
   @PrimaryColumn()
-  id: string;
+  id: string
 
   @ManyToOne(() => Car)
   @JoinColumn({ name: "car_id" })
-  car: Car;
+  car: Car
 
   @Column()
-  car_id: string;
+  car_id: string
 
   @Column()
-  user_id: string;
+  user_id: string
 
   @Column()
-  start_date: Date;
+  start_date: Date
 
   @Column()
-  end_date: Date;
+  end_date: Date
 
   @Column()
-  expected_return_date: Date;
+  expected_return_date: Date
 
   @Column()
-  total: number;
+  total: number
 
   @CreateDateColumn()
-  created_at: Date;
+  created_at: Date
 
   @UpdateDateColumn()
-  updated_at: Date;
+  updated_at: Date
 
   constructor() {
     if (!this.id) {
-      this.id = uuidV4();
+      this.id = uuidV4()
     }
   }
 }
 
-export { Rental };
+export { Rental }
