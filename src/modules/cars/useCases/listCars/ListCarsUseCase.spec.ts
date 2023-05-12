@@ -70,7 +70,6 @@ describe("List Cars", () => {
     })
     const cars = await listCarsUseCase.execute({ category_id: 'ab0000ab-609b-4544-93d7-09121af8123f' })
 
-    console.log(cars)
     expect(cars).toHaveLength(1)
   })
 

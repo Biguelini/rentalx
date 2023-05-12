@@ -1,24 +1,54 @@
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryColumn,
+  UpdateDateColumn,
+} from "typeorm";
+import { v4 as uuidV4 } from "uuid";
 
-import { v4 as uuidV4 } from "uuid"
+import { Car } from "../../../../cars/infra/typeorm/entities/Car";
 
-import { Car } from "../../../../cars/infra/typeorm/entities/Car"
-
+@Entity("rentals")
 class Rental {
-  id: string
-  car: Car
-  car_id: string
-  user_id: string
-  start_date: Date
-  end_date: Date
-  expected_return_date: Date
-  total: number
-  created_at: Date
-  updated_at: Date
+  @PrimaryColumn()
+  id: string;
+
+  @ManyToOne(() => Car)
+  @JoinColumn({ name: "car_id" })
+  car: Car;
+
+  @Column()
+  car_id: string;
+
+  @Column()
+  user_id: string;
+
+  @Column()
+  start_date: Date;
+
+  @Column()
+  end_date: Date;
+
+  @Column()
+  expected_return_date: Date;
+
+  @Column()
+  total: number;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
+
   constructor() {
     if (!this.id) {
-      this.id = uuidV4()
+      this.id = uuidV4();
     }
   }
 }
 
-export { Rental }
+export { Rental };
