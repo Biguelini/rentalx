@@ -1,7 +1,7 @@
-import { IMailProvider } from "../IMailProvider";
+import { IMailProvider } from "../IMailProvider"
 
 class MailProviderInMemory implements IMailProvider {
-  private message: any[] = [];
+  private message: any[] = []
 
   async sendMail(
     to: string,
@@ -14,8 +14,8 @@ class MailProviderInMemory implements IMailProvider {
       subject,
       variables,
       path,
-    });
+    })
   }
 }
 
-export { MailProviderInMemory };
+export { MailProviderInMemory }
