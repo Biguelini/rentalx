@@ -15,11 +15,11 @@ rentalRoutes.post(
   "/devolution/:id",
   ensureAuthenticated,
   devolutionRentalController.handle
-);
+)
 rentalRoutes.get(
   "/user",
   ensureAuthenticated,
   listRentalsByUserController.handle
-);
+)
 
 export { rentalRoutes }
